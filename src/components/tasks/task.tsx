@@ -123,7 +123,7 @@ export default function AllTasks({ todos, t }: AllTasksProps) {
           </section>
         }
       >
-        <section className='h-[100%] w-[100%]'>
+        <section className='h-[100%] w-[100%] relative'>
           <div className='flex  flex-col gap-5 bg-blue-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 px-5 py-8 rounded-lg'>
             <div className='flex  flex-row items-center gap-5'>
               <IoCalendarNumberOutline color='gray' size={20} />
@@ -173,7 +173,7 @@ export default function AllTasks({ todos, t }: AllTasksProps) {
             </div>
             <HiOutlineDotsVertical size={25} className='cursor-pointer' />
           </div>
-          <div className='mt-10 relative'>
+          <div className='mt-5 '>
             <div className=' flex flex-row gap-5'>
               <CustomImage
                 src={icon}
@@ -242,20 +242,20 @@ export default function AllTasks({ todos, t }: AllTasksProps) {
                 </div>
               </div>
             </div>
-            <div className=' absolute bottom-0 w-full left-0 right-0'>
-              <Input
-                type={'text'}
-                placeholder={'Your message'}
-                className={` rounded-xl  h-[60px] dark:border-gray-800 dark:bg-gray-900 text-gray-900 dark:text-gray-100`}
-                suffix={
-                  <div className='w-full flex flex-row items-center gap-5'>
-                    <MdOutlineKeyboardVoice size={25} color='gray' />
-                    <div className='h-10 w-1 bg-gray-300 dark:bg-gray-600 hidden lg:block'></div>
-                    <BsSendFill size={25} color='#3656c4' />
-                  </div>
-                }
-              />
-            </div>
+          </div>
+          <div className=' absolute bottom-0 w-full left-0 right-0'>
+            <Input
+              type={'text'}
+              placeholder={'Your message'}
+              className={` rounded-xl  h-[60px] dark:border-gray-800 dark:bg-gray-900 text-gray-900 dark:text-gray-100`}
+              suffix={
+                <div className='w-full flex flex-row items-center gap-5'>
+                  <MdOutlineKeyboardVoice size={25} color='gray' />
+                  <div className='h-10 w-1 bg-gray-300 dark:bg-gray-600 hidden lg:block'></div>
+                  <BsSendFill size={25} color='#3656c4' />
+                </div>
+              }
+            />
           </div>
         </section>
       </Drawer>
