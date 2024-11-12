@@ -109,7 +109,7 @@ export default function AllTasks({ todos, t }: AllTasksProps) {
         height='100%'
         className={`${darkMode ? 'dark' : 'white'} relative  `}
         title={
-          <section className='flex justify-between items-center'>
+          <section className='flex justify-between items-center overflow-y-auto scroll'>
             <p>Project Overview</p>
             <div className='flex flex-row gap-4 items-center'>
               <p>See all</p>

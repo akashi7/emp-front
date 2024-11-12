@@ -16,8 +16,8 @@ import {
 } from 'react-icons/ci'
 import { GoSun } from 'react-icons/go'
 import { IoIosNotificationsOutline } from 'react-icons/io'
+import { IoCloseOutline } from 'react-icons/io5'
 import { useDispatch, useSelector } from 'react-redux'
-import closeSvg from '../../assets/close.svg'
 import france from '../../assets/img/france.png'
 import usa from '../../assets/img/states.png'
 import icon from '../../assets/onesvg.svg'
@@ -72,17 +72,17 @@ const NavBar = () => {
         height={'100%'}
         className={`${darkMode ? 'dark' : 'white'} relative `}
         title={
-          <section className='flex justify-between items-center'>
-            <CustomImage
+          <section className='flex justify-center items-center'>
+            <IoCloseOutline
+              color={darkMode ? 'white' : 'gray'}
+              size={20}
+              className=' cursor-pointer'
               onClick={toggleDrawer}
-              src={closeSvg}
-              width={30}
-              className='cursor-pointer'
             />
           </section>
         }
       >
-        <section className=' h-[100%] w-[100%]'>
+        <section className=' h-[100%] w-[100%] overflow-y-auto scroll'>
           <div className=''>
             <SidebarItem icon={<CiHome size={22} />} url='#' />
             <SidebarItem icon={<BiMessage size={22} />} url='#' />
