@@ -106,7 +106,6 @@ export default function AllTasks({ todos, t }: AllTasksProps) {
         closeIcon={false}
         open={drawerVisible}
         zIndex={900}
-        height='100%'
         className={`${darkMode ? 'dark' : 'white'}`}
         title={
           <section className='flex justify-between items-center '>
@@ -173,7 +172,7 @@ export default function AllTasks({ todos, t }: AllTasksProps) {
             </div>
             <HiOutlineDotsVertical size={25} className='cursor-pointer' />
           </div>
-          <div className='mt-5 h-[320px] lg:h-full overflow-y-auto scroll'>
+          <div className='mt-5 h-[50%]  sm:h-[50%] lg:h-[50%] pb-[80px] pt-[10px] overflow-y-auto  sm:overflow-y-hidden lg:overflow-y-hidden scroll '>
             <div className=' flex flex-row gap-5'>
               <CustomImage
                 src={icon}
