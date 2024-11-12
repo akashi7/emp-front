@@ -69,7 +69,8 @@ const NavBar = () => {
         open={drawerVisible}
         zIndex={900}
         width={'fit-content'}
-        className={`${darkMode ? 'dark' : 'white'}`}
+        height={'100%'}
+        className={`${darkMode ? 'dark' : 'white'} relative `}
         title={
           <section className='flex justify-between items-center'>
             <CustomImage
@@ -81,7 +82,7 @@ const NavBar = () => {
           </section>
         }
       >
-        <section className='relative h-[100%] w-[100%]'>
+        <section className=' h-[100%] w-[100%]'>
           <div className=''>
             <SidebarItem icon={<CiHome size={22} />} url='#' />
             <SidebarItem icon={<BiMessage size={22} />} url='#' />
@@ -108,12 +109,12 @@ const NavBar = () => {
               height={23}
             />
           </div>
-          <div className='mt-5 w-full flex flex-col items-center '>
+          <div className='mt-2 w-full flex flex-col items-center '>
             <SidebarItem icon={<BsPlusCircleDotted size={30} />} url='/d' />
           </div>
           <div className='absolute bottom-0 left-0 right-0 flex flex-col items-center gap-2 mb-4 '>
-            <SidebarItem icon={<CiSettings size={28} />} url='#' />
-            <SidebarItem icon={<CiUser size={28} />} url='#' />
+            <SidebarItem icon={<CiSettings size={23} />} url='#' />
+            <SidebarItem icon={<CiUser size={23} />} url='#' />
           </div>
         </section>
       </Drawer>

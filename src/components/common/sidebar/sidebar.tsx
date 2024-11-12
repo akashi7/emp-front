@@ -8,10 +8,12 @@ import {
   CiSettings,
   CiUser,
 } from 'react-icons/ci'
+import { useSelector } from 'react-redux'
 import { useMatch, useNavigate } from 'react-router-dom'
 import icon from '../../../assets/onesvg.svg'
 import iconThree from '../../../assets/threesvg.svg'
 import iconTwo from '../../../assets/twosvg.svg'
+import { RootState } from '../../../lib/redux/store'
 import CustomImage from '../image/customImage'
 
 interface SidebarItemProps {
@@ -26,6 +28,8 @@ export const SidebarItem: FC<SidebarItemProps> = ({
   const navigate = useNavigate()
   const isMatch = useMatch(url)
 
+  const darkMode = useSelector((state: RootState) => state.theme.darkMode)
+
   const handleClick = (): void => {
     navigate(url)
   }
@@ -34,13 +38,13 @@ export const SidebarItem: FC<SidebarItemProps> = ({
     <div
       className={`mb-2 flex justify-center items-center h-14 w-full cursor-pointer p-5 ${
         isMatch
-          ? 'bg-blue-100 border-l-8 border-[#3656C4] rounded-r-lg'
+          ? 'bg-blue-100  dark:bg-gray-600   border-l-8 border-[#3656C4] rounded-r-lg'
           : 'bg-transparent'
       }`}
       onClick={handleClick}
     >
       {cloneElement(icon, {
-        color: isMatch ? '#3656C4' : 'gray',
+        color: isMatch ? (darkMode ? 'white' : '#3656C4') : 'gray',
       })}
     </div>
   )

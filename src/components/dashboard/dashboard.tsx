@@ -138,7 +138,7 @@ const DashboardComponent: FC<DashboardComponentProps> = ({ t }) => {
 
               <IoChevronDownSharp size={15} color='gray' />
             </div>
-            <div className='h-10 w-1 bg-gray-300 hidden lg:block'></div>
+            <div className='h-10 w-1 bg-gray-300 dark:bg-gray-600 hidden lg:block'></div>
             <div className='flex flex-row items-center'>
               <CustomImage
                 src={icon}
@@ -175,7 +175,7 @@ const DashboardComponent: FC<DashboardComponentProps> = ({ t }) => {
           </div>
           <div className='lg:flex flex-row items-center gap-5 hidden '>
             <PiLinkSimple size={20} />
-            <div className='h-8 w-1 bg-gray-300'></div>
+            <div className='h-8 w-1 bg-gray-300 dark:bg-gray-600'></div>
             <PiSquaresFourThin size={30} />
           </div>
         </div>
@@ -199,7 +199,7 @@ const DashboardComponent: FC<DashboardComponentProps> = ({ t }) => {
             >
               {t('All task')}
             </p>
-            <p className='text-[#3656C4]  bg-blue-100 p-1 rounded-md w-[40px] text-center'>
+            <p className='text-[#3656C4]  bg-blue-100 dark:bg-gray-600  dark:text-stone-200 p-1 rounded-md w-[40px] text-center'>
               {data?.todos?.length}
             </p>
           </div>
@@ -219,7 +219,7 @@ const DashboardComponent: FC<DashboardComponentProps> = ({ t }) => {
             >
               {t('In progress')}
             </p>
-            <p className='text-[#3656C4] bg-blue-100 p-1 rounded-md w-[40px] text-center'>
+            <p className='text-[#3656C4] bg-blue-100 dark:bg-gray-600  dark:text-stone-200 p-1 rounded-md w-[40px] text-center'>
               {data?.todos?.filter((todo) => todo.completed === false)?.length}
             </p>
           </div>
@@ -239,7 +239,7 @@ const DashboardComponent: FC<DashboardComponentProps> = ({ t }) => {
             >
               {t('Completed')}
             </p>
-            <p className='text-[#3656C4] bg-blue-100 p-1 rounded-md w-[40px] text-center'>
+            <p className='text-[#3656C4] bg-blue-100 dark:bg-gray-600  dark:text-stone-200 p-1 rounded-md w-[40px] text-center'>
               {data?.todos?.filter((todo) => todo.completed === true)?.length}
             </p>
           </div>
@@ -266,7 +266,7 @@ const DashboardComponent: FC<DashboardComponentProps> = ({ t }) => {
               >
                 {t('All task')}
               </p>
-              <p className='text-[#3656C4] bg-blue-100 p-1 rounded-md w-[40px] text-center'>
+              <p className='text-[#3656C4] bg-blue-100  dark:bg-gray-600  dark:text-stone-200 p-1 rounded-md w-[40px] text-center'>
                 {data?.todos?.length}
               </p>
             </div>
@@ -291,7 +291,7 @@ const DashboardComponent: FC<DashboardComponentProps> = ({ t }) => {
               >
                 {t('In progress')}
               </p>
-              <p className='text-[#3656C4] bg-blue-100 p-1 rounded-md w-[40px] text-center'>
+              <p className='text-[#3656C4] bg-blue-100 dark:bg-gray-600  dark:text-stone-200 p-1 rounded-md w-[40px] text-center'>
                 {
                   data?.todos?.filter((todo) => todo.completed === false)
                     ?.length
@@ -319,7 +319,7 @@ const DashboardComponent: FC<DashboardComponentProps> = ({ t }) => {
               >
                 {t('Completed')}
               </p>
-              <p className='text-[#3656C4] bg-blue-100 p-1 rounded-md w-[40px] text-center'>
+              <p className='text-[#3656C4] bg-blue-100 dark:bg-gray-600  dark:text-stone-200 p-1 rounded-md w-[40px] text-center'>
                 {data?.todos?.filter((todo) => todo.completed === true)?.length}
               </p>
             </div>
