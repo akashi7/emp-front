@@ -242,7 +242,7 @@ export default function AllTasks({ todos, t }: AllTasksProps) {
                 </div>
               </div>
             </div>
-            <div className=' absolute bottom-0 w-full'>
+            <div className=' absolute bottom-0 w-full left-0 right-0'>
               <Input
                 type={'text'}
                 placeholder={'Your message'}
