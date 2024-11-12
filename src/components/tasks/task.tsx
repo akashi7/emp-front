@@ -173,7 +173,7 @@ export default function AllTasks({ todos, t }: AllTasksProps) {
             </div>
             <HiOutlineDotsVertical size={25} className='cursor-pointer' />
           </div>
-          <div className='mt-5 '>
+          <div className='mt-5 h-[320px] lg:h-full overflow-y-auto scroll'>
             <div className=' flex flex-row gap-5'>
               <CustomImage
                 src={icon}
