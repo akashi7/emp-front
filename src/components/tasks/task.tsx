@@ -107,7 +107,7 @@ export default function AllTasks({ todos, t }: AllTasksProps) {
         open={drawerVisible}
         zIndex={900}
         height='100%'
-        className={`${darkMode ? 'dark' : 'white'} relative  `}
+        className={`${darkMode ? 'dark' : 'white'}`}
         title={
           <section className='flex justify-between items-center '>
             <p>Project Overview</p>
@@ -123,7 +123,7 @@ export default function AllTasks({ todos, t }: AllTasksProps) {
           </section>
         }
       >
-        <section className='h-[100%] w-[100%] relative overflow-y-auto scroll'>
+        <section className='h-[100%] w-[100%]'>
           <div className='flex  flex-col gap-5 bg-blue-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 px-5 py-8 rounded-lg'>
             <div className='flex  flex-row items-center gap-5'>
               <IoCalendarNumberOutline color='gray' size={20} />
@@ -173,7 +173,7 @@ export default function AllTasks({ todos, t }: AllTasksProps) {
             </div>
             <HiOutlineDotsVertical size={25} className='cursor-pointer' />
           </div>
-          <div className='mt-10'>
+          <div className='mt-10 relative'>
             <div className=' flex flex-row gap-5'>
               <CustomImage
                 src={icon}
