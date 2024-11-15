@@ -1,3 +1,4 @@
+import { ScrollNumberState } from 'antd/es/badge/ScrollNumber'
 import { baseAPI } from './api'
 
 export interface Todo {
@@ -28,6 +29,33 @@ interface DeleteTodoDTO {
   id: number
 }
 
+export interface Select {
+  title: string
+  reactions: string
+  userId: number
+}
+
+interface params {
+  limit?: number
+  skip?: number
+  select?: string
+}
+
+export interface respObj {
+  id: number
+  title: string
+  reactions: {
+    likes: number
+    dislikes: number
+  }
+  userId: number
+}
+interface paginatedResponse {
+  posts: Array<respObj>
+  total: number
+  skip: number
+  limit: ScrollNumberState
+}
 const todoEndpoints = baseAPI.injectEndpoints({
   endpoints: (builder) => ({
     getTodos: builder.query<TodoResp, void>({
@@ -60,12 +88,23 @@ const todoEndpoints = baseAPI.injectEndpoints({
         method: 'DELETE',
       }),
     }),
+
+    getPaginatedTasks: builder.query<paginatedResponse, params>({
+      providesTags: ['GetTodos'],
+      query: ({ limit, skip, select }) => ({
+        url: `posts?limit=${limit || 10}&skip=${skip || 10}&select=${
+          select || {}
+        }`,
+        method: 'GET',
+      }),
+    }),
   }),
 })
 
 export const {
-  useGetTodosQuery,
   useAddTodoMutation,
   useEditTodoMutation,
   useDeleteTodoMutation,
+  useGetTodosQuery,
+  useGetPaginatedTasksQuery,
 } = todoEndpoints
