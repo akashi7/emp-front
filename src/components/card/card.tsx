@@ -11,10 +11,17 @@ const Card: FC<CardProps> = ({ posts }) => {
       {posts.map((post, idx) => {
         return (
           <div key={idx} className='bg-gray-300 p-5 '>
-            <p>{post.title}</p>
+            <p>
+              Title : <span className='pl-2'>{post.title}</span>
+            </p>
             <div className='flex flex-row gap-5 items-center'>
-              <p>{post.reactions.likes}</p>
-              <p>{post.reactions.dislikes}</p>
+              <p>
+                Likes : <span className='pl-2'>{post.reactions.likes}</span>
+              </p>
+              <p>
+                Dislikes :{' '}
+                <span className='pl-2'>{post.reactions.dislikes}</span>
+              </p>
             </div>
           </div>
         )
